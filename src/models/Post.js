@@ -1,9 +1,12 @@
-const mongoose = require("mongoose");
-const Category = require("../models/Category");
+const mongoose = require('mongoose');
+const Category = require('../models/Category');
 
 const PostSchema = new mongoose.Schema({
   title: String,
   description: String,
-  category: Category,
+  category: String,
   timestamp: Number,
 });
+
+const Post = mongoose.model('Post', PostSchema);
+module.exports = { Post, PostSchema };

@@ -1,8 +1,8 @@
-require("dotenv").config();
-const express = require("express");
+require('dotenv').config();
+const express = require('express');
 const app = express();
-const mongoose = require("mongoose");
-const routes = require("./routes");
+const mongoose = require('mongoose');
+const routes = require('./routes');
 const { MONGO_URL, PORT } = process.env;
 
 mongoose
@@ -10,7 +10,7 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("Successfully connected to MongoDB"))
+  .then(() => console.log('Successfully connected to MongoDB'))
   .catch((e) => console.log(e));
 
 app.use(express.json());
